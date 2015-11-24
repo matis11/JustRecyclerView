@@ -1,6 +1,8 @@
 package com.example.mateusz.justrecyclerview;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 public class HomeThreadListAdapter extends BaseRecyclerAdapter<MyItem, MyViewHolder> {
@@ -14,7 +16,9 @@ public class HomeThreadListAdapter extends BaseRecyclerAdapter<MyItem, MyViewHol
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        final View threadView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.post_item, parent, false);
+        return new MyViewHolder(threadView, mContext);
     }
 
     @Override
