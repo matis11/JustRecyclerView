@@ -1,7 +1,9 @@
 package com.example.mateusz.justrecyclerview;
 
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 public class MainActivityFragment extends BaseRecyclerFragment<HomeThreadListAdapter> {
@@ -9,6 +11,35 @@ public class MainActivityFragment extends BaseRecyclerFragment<HomeThreadListAda
     public static final String TAG = "Basic Tag";
 
     public MainActivityFragment() {
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+//        mRecyclerView.setHasFixedSize(true);
+
+//        mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+//            @Override
+//            public boolean onInterceptTouchEvent(RecyclerView rv, MotionEvent e) {
+//                int action = e.getAction();
+//                switch (action) {
+//                    case MotionEvent.ACTION_MOVE:
+//                        rv.getParent().getParent().requestDisallowInterceptTouchEvent(true);
+//                        break;
+//                }
+//                return false;
+//            }
+//
+//            @Override
+//            public void onTouchEvent(RecyclerView rv, MotionEvent e) {
+//
+//            }
+//
+//            @Override
+//            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+//
+//            }
+//        });
     }
 
     @Override
@@ -33,6 +64,7 @@ public class MainActivityFragment extends BaseRecyclerFragment<HomeThreadListAda
 
     @Override
     protected RecyclerView.LayoutManager getLayoutManager() {
-        return new FixedGridLayoutManager(getActivity(), 1);
+        return new MyLinearLayoutManager(getActivity());
+//        return new FixedGridLayoutManager(getActivity(), 1);
     }
 }
