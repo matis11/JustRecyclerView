@@ -33,6 +33,6 @@ public class MainActivityFragment extends BaseRecyclerFragment<HomeThreadListAda
 
     @Override
     protected RecyclerView.LayoutManager getLayoutManager() {
-        return new FixedGridLayoutManager(getActivity(), 5);
+        return new FixedGridLayoutManager(getActivity(), 1);
     }
 }
