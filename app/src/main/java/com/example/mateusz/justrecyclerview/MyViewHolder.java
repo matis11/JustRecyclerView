@@ -15,7 +15,7 @@ public class MyViewHolder extends RecyclerView.ViewHolder{
         super(itemView);
 
         titleView = (TextView) itemView.findViewById(R.id.title);
-        contentView =(TextView) itemView.findViewById(R.id.content);
+        contentView = (TextView) itemView.findViewById(R.id.content);
     }
 
     public void bind(ArrayList<MyItem> dataSet, int position) {

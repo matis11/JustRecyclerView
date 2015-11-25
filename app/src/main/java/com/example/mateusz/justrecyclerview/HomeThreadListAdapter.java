@@ -12,12 +12,17 @@ public class HomeThreadListAdapter extends BaseRecyclerAdapter<MyItem, MyViewHol
     public HomeThreadListAdapter(Context context) {
         super(context);
         this.mContext = context;
+
+        for (int i = 0; i < 10; i++) {
+            addItem(new MyItem("Title", "Content"));
+        }
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final View threadView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.post_item, parent, false);
+
         return new MyViewHolder(threadView, mContext);
     }
 
